@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pipes';
+  public message = 'Yaaaayy! you are inside pipes project';
+  // property storing the current date and time
+  public d = new Date();
+  // json object
+  public person = {
+    firstName: 'Mittul',
+    lastName: 'Mandhan'
+  };
 }

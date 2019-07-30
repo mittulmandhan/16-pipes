@@ -1,0 +1,51 @@
+<!-- In Angular pipes allow us to transform the data before displaying them in the view -->
+<!-- pipes can be applied by using interpolation on the property -->
+
+<!-- first of all lets look at various pipes applicable on string type data -->
+
+<!-- all the letters in the string will be displayed in lowercase -->
+<h2>{{messageInput | lowercase}}</h2>
+<!-- all the letters in the string will be displayed in uppercase -->
+<h2>{{messageInput | uppercase}}</h2>
+<!-- all the letters in the string will be displayed in Titlecase -->
+<h2>{{messageInput | titlecase}}</h2>
+<!-- this pipe will slice the string from L and R index where L is the first argument which specifies left slicing index whereas R is the second argument which specifies the right slicing index(R is an optional argument) -->
+<h2>{{messageInput | slice:24:29}}</h2>
+<!-- you can also combine 2 pipes -->
+<h2>{{messageInput | slice:24:29 | titlecase}}</h2>
+<!-- you can display the values in a json object through following interpolation code -->
+<h2>{{personInput.firstName+" "+personInput.lastName}}</h2>
+<!-- To display the data in json format -->
+<h2>{{personInput | json}}</h2>
+
+<hr>
+
+<!-- now lets have a look at pipe applicable on numbers -->
+
+<!-- In the following format there will be minimum 1 digit and there will be minimum 2 decimal places and maximum 3 decimal places -->
+<h2>{{5.678 | number:'1.2-3'}}</h2>
+<!-- In the following format there will be minimum 3 digit and there will be minimum 4 decimal places and maximum 5 decimal places -->
+<h2>{{5.678 | number:'3.4-5'}}</h2>
+<!-- In the following format there will be minimum 1 digit and there will be minimum 1 decimal places and maximum 2 decimal places -->
+<h2>{{5.678 | number:'1.1-2'}}</h2>
+
+<hr>
+
+<!-- for certain annotations -->
+
+<!-- percent pipe -->
+<h2>{{0.25 | percent}}</h2>
+<!-- currency pipe -->
+<h2>{{25 | currency}}</h2>
+<!-- currency with currency code in argument -->
+<h2>{{25 | currency: 'GBP'}}</h2>
+<!-- currency with currency code in first argument and format in second argument -->
+<h2>{{25 | currency: 'EUR': 'code'}}</h2>
+
+<!-- to display date and time -->
+<h2>{{dateInput}}</h2>
+<h2>{{dateInput | date:'short'}}</h2>
+<h2>{{dateInput | date:'shortTime'}}</h2>
+<h2>{{dateInput | date:'shortDate'}}</h2>
+
+<!-- read the official documentation of pipes online to understand all  the pipes -->
